@@ -52,13 +52,13 @@ function travail(startPos,endPos){
                                             // to fix 
         }
         
-        const moves = getMoves(currentPos);
+        const moves = getMoves(currentPos); // moves has all the valid paths
         for (let i=0;i<moves.length;i++){
-            if(!visited.has(moves[i])) {
-                moves[i].distance = currentPos.distance+1;
-                moves[i].previous = currentPos;
-                q.push(moves[i]);
-                visited.add(moves[i]);
+            if(!visited.has(moves[i])) {  //checks if we havent visited path 
+                moves[i].distance = currentPos.distance+1;  //adds distance 
+                moves[i].previous = currentPos;   // adds the previous path to new path(s)
+                q.push(moves[i]);            //adds path(s) to queue
+                visited.add(moves[i]);    // adds path(s) to visited set 
             }
         }
     }
